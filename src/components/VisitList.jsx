@@ -44,7 +44,7 @@ export default function VisitList() {
     setLoading(true);
     try {
       const url = `/visitas?clienteId=${form.clienteId}&empleadoId=${form.empleadoId}&observaciones=${form.observaciones}`;
-      const res = await fetch("http://localhost:8080/api" + url, { method: "POST" });
+      const res = await fetch("http://localhost:8081/api" + url, { method: "POST" });
       const newVisit = await res.json();
       const updatedVisits = [...visits, newVisit];
       setVisits(updatedVisits);

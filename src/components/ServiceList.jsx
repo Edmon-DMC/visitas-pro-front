@@ -35,7 +35,7 @@ export default function ServiceList() {
     setLoading(true);
     try {
       const url = `/servicios?visitaId=${form.visitaId}&descripcion=${form.descripcion}&precio=${form.precio}`;
-      const res = await fetch("http://localhost:8080/api" + url, { method: "POST" });
+      const res = await fetch("http://localhost:8081/api" + url, { method: "POST" });
       const newService = await res.json();
       setServices([...services, newService]);
       setForm({ visitaId: "", descripcion: "", precio: "" });
